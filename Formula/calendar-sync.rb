@@ -11,6 +11,7 @@ class CalendarSync < Formula
   version "0.2.1"
   sha256 "ad568c989e09b8956d2713439cc363ce18a306d948df61591c7453653c0ab322"
   license "PolyForm-Noncommercial-1.0.0"
+  revision 1
   head "https://github.com/neteinstein/Calendar-Sync.git", branch: "main"
 
   depends_on macos: :sonoma
@@ -25,16 +26,25 @@ class CalendarSync < Formula
 
   def caveats
     <<~EOS
-      Calendar Sync is a menu bar app. Start it with:
+      Calendar Sync is a menu bar app. To start it once:
         open "#{opt_prefix}/Calendar Sync.app"
 
-      If you use "Open at login", copy it into /Applications instead, so the
-      login item survives upgrades:
-        cp -a "#{opt_prefix}/Calendar Sync.app" /Applications/
+      To start it at every login, use brew services (below) rather than
+      "Open at login" in the app's Settings. The service runs the app from
+      #{opt_prefix}, which keeps pointing at the newest version
+      after brew upgrade. Leave the in-app switch off, or two copies start.
+
+      brew upgrade doesn't restart the running app. Do that with:
+        brew services restart calendar-sync
 
       The build is ad-hoc signed, so macOS asks for calendar access again
       after each upgrade. Your settings are kept.
     EOS
+  end
+
+  service do
+    run opt_prefix/"Calendar Sync.app/Contents/MacOS/CalendarSync"
+    process_type :interactive
   end
 
   test do
