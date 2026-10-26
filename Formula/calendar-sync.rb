@@ -7,9 +7,9 @@
 class CalendarSync < Formula
   desc "Menu bar app that copies client-calendar meetings into your main calendar"
   homepage "https://github.com/neteinstein/Calendar-Sync"
-  url "https://github.com/neteinstein/Calendar-Sync/archive/71722390add7b710d4146d9ef47f1148b47ee51b.tar.gz"
+  url "https://github.com/neteinstein/Calendar-Sync/archive/80f1aa88d2bdd8a29f15a3fc372621407afebe86.tar.gz"
   version "0.2.0"
-  sha256 "43a2e97ada32b47ddc5432217569a542d7aaa5e011c87d5001232cb75d047f65"
+  sha256 "e9f81bc33c7e3918769fb8c67b8576d618290ceee328c07310e69f78d702c620"
   license "PolyForm-Noncommercial-1.0.0"
   head "https://github.com/neteinstein/Calendar-Sync.git", branch: "main"
 
@@ -17,8 +17,9 @@ class CalendarSync < Formula
 
   def install
     # Builds with the system Swift toolchain (Xcode 15+ command line tools are enough)
-    # and ad-hoc signs, exactly like a manual source build.
-    system "scripts/build-app.sh"
+    # and ad-hoc signs, exactly like a manual source build. SwiftPM's own sandbox can't
+    # nest inside Homebrew's build sandbox ("sandbox_apply: Operation not permitted").
+    system "scripts/build-app.sh", "--disable-sandbox"
     prefix.install "build/Calendar Sync.app"
   end
 
