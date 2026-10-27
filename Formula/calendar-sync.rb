@@ -7,10 +7,10 @@
 class CalendarSync < Formula
   desc "Menu bar app that copies client-calendar meetings into your main calendar"
   homepage "https://github.com/neteinstein/Calendar-Sync"
-  url "https://github.com/neteinstein/Calendar-Sync/archive/e69acd33275d335f4ff59a01739d28be46a51928.tar.gz"
-  version "1.1.3"
-  sha256 "1aba82ceee0730d75425c86822485ca015c9bccf370e39001231a9654d96723c"
-  license "PolyForm-Noncommercial-1.0.0"
+  url "https://github.com/neteinstein/Calendar-Sync/archive/823a44b486ead5050a9861f8535982ddfe8fe696.tar.gz"
+  version "1.1.5"
+  sha256 "0b23b667e5aaec074bf57e909542acf36b28393d8a3cfb2a642b16d32964aa9b"
+  license "SUL-1.0"
   head "https://github.com/neteinstein/Calendar-Sync.git", branch: "main"
 
   depends_on macos: :sonoma
