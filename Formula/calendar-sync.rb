@@ -7,9 +7,9 @@
 class CalendarSync < Formula
   desc "Menu bar app that copies client-calendar meetings into your main calendar"
   homepage "https://github.com/neteinstein/Calendar-Sync"
-  url "https://github.com/neteinstein/Calendar-Sync/archive/a42094c5767273e56a4fdf90d867ec16d6652703.tar.gz"
-  version "1.0.0"
-  sha256 "f8ea06c01c2158d7dd1566340629eb81367bb39f7a4cda6712ff69f55281378d"
+  url "https://github.com/neteinstein/Calendar-Sync/archive/f0e73e09069cdc55f58fd5a18b34c2fb355024c8.tar.gz"
+  version "1.1.0"
+  sha256 "ca2cffa3220cb8fcbd0bf902c47cde6d7e1ca5da8fdb7fa6e4c0df077f8dfec7"
   license "PolyForm-Noncommercial-1.0.0"
   head "https://github.com/neteinstein/Calendar-Sync.git", branch: "main"
 
@@ -27,6 +27,13 @@ class CalendarSync < Formula
     <<~EOS
       Calendar Sync is a menu bar app. To start it once:
         open "#{opt_prefix}/Calendar Sync.app"
+
+      To have it in your Applications folder too, link it there once:
+        ln -s "#{opt_prefix}/Calendar Sync.app" /Applications/
+      The link goes through #{opt_prefix}, so it opens the newest version
+      after brew upgrade. Finder and the Dock treat it as the app; Spotlight
+      and Launchpad don't list linked apps. brew uninstall leaves it behind:
+        rm "/Applications/Calendar Sync.app"
 
       To start it at every login, use brew services (below) rather than
       "Open at login" in the app's Settings. The service runs the app from
