@@ -7,9 +7,9 @@
 class CalendarSync < Formula
   desc "Menu bar app that copies client-calendar meetings into your main calendar"
   homepage "https://github.com/neteinstein/Calendar-Sync"
-  url "https://github.com/neteinstein/Calendar-Sync/archive/823a44b486ead5050a9861f8535982ddfe8fe696.tar.gz"
-  version "1.1.5"
-  sha256 "0b23b667e5aaec074bf57e909542acf36b28393d8a3cfb2a642b16d32964aa9b"
+  url "https://github.com/neteinstein/Calendar-Sync/archive/f4817433838b6d2efdd51f3c887697a1e4516e5e.tar.gz"
+  version "1.1.7"
+  sha256 "069c441133e3c138f8b9495f34d7f48bbf41e12b8a678a2dbf8a8728e8f812eb"
   license "SUL-1.0"
   head "https://github.com/neteinstein/Calendar-Sync.git", branch: "main"
 
@@ -52,8 +52,12 @@ class CalendarSync < Formula
       untrusted tap, run this from your account first:
         brew trust --formula neteinstein/tap/calendar-sync
 
-      brew upgrade doesn't restart the running app. Do that with:
+      brew upgrade doesn't restart a running Calendar Sync: it keeps
+      running the old version until it quits. If you started it with
+      brew services, restart it with:
         brew services restart calendar-sync
+      If you opened it yourself, quit it and open the new version with:
+        pkill -x CalendarSync; sleep 1; open "#{opt_prefix}/Calendar Sync.app"
 
       The build is ad-hoc signed, so macOS asks for calendar access again
       after each upgrade. Your settings are kept.
