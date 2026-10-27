@@ -7,9 +7,9 @@
 class CalendarSync < Formula
   desc "Menu bar app that copies client-calendar meetings into your main calendar"
   homepage "https://github.com/neteinstein/Calendar-Sync"
-  url "https://github.com/neteinstein/Calendar-Sync/archive/e2980babf6fd70058cb11df1f079c6c9a217f7a0.tar.gz"
-  version "1.1.1"
-  sha256 "a7363396f5c9ddc08727ce41965671e8613deace5c29728237159e84f02188d9"
+  url "https://github.com/neteinstein/Calendar-Sync/archive/00e763082be2a78bb7d5bddb74862e649af31f3e.tar.gz"
+  version "1.1.2"
+  sha256 "90b022e046232f438b33821d5c2b13491293730f73965c8308de483e80dd6309"
   license "PolyForm-Noncommercial-1.0.0"
   head "https://github.com/neteinstein/Calendar-Sync.git", branch: "main"
 
@@ -28,12 +28,16 @@ class CalendarSync < Formula
       Calendar Sync is a menu bar app. To start it once:
         open "#{opt_prefix}/Calendar Sync.app"
 
-      To have it in your Applications folder too, link it there once:
-        ln -s "#{opt_prefix}/Calendar Sync.app" /Applications/
-      The link goes through #{opt_prefix}, so it opens the newest version
+      The first time it runs, the app links itself into ~/Applications,
+      unless /Applications already has it. The link goes through
+      #{opt_prefix}, so it opens the newest version
       after brew upgrade. Finder and the Dock treat it as the app; Spotlight
-      and Launchpad don't list linked apps. brew uninstall leaves it behind:
-        rm "/Applications/Calendar Sync.app"
+      and Launchpad don't list linked apps. Remove the link and it stays
+      removed. To link it into /Applications instead, from an account that
+      can write there:
+        ln -s "#{opt_prefix}/Calendar Sync.app" /Applications/
+      brew uninstall leaves the link behind:
+        rm ~/Applications/"Calendar Sync.app"
 
       To start it at every login, use brew services (below) rather than
       "Open at login" in the app's Settings. The service runs the app from
