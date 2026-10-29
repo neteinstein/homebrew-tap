@@ -7,9 +7,9 @@
 class CalendarSync < Formula
   desc "Menu bar app that copies secondary-calendar meetings into your main calendar"
   homepage "https://github.com/neteinstein/Calendar-Sync"
-  url "https://github.com/neteinstein/Calendar-Sync/archive/4e0b3acb1953aaf50e6a51329bca7fda12179d1d.tar.gz"
-  version "1.1.17"
-  sha256 "6ab73a2a68823bd8dc91cbb86450d36e5d163227c2964ad9475a0a5acb05bd2a"
+  url "https://github.com/neteinstein/Calendar-Sync/archive/29161819d992b3f2d9cde9c71e40a7d79f36f125.tar.gz"
+  version "1.1.18"
+  sha256 "dafd29f8b9f965b4482962161ef6de6d61c345a7dc1b074af9545efa2257f111"
   license "SUL-1.0"
   head "https://github.com/neteinstein/Calendar-Sync.git", branch: "main"
 
