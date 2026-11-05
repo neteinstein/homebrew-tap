@@ -7,9 +7,9 @@
 class CalendarSync < Formula
   desc "Menu bar app that copies secondary-calendar meetings into your main calendar"
   homepage "https://github.com/neteinstein/Calendar-Sync"
-  url "https://github.com/neteinstein/Calendar-Sync/archive/1d66d9fff58a2b45fd5c93111efb54482f1abed4.tar.gz"
-  version "2.0.2"
-  sha256 "cc87619fc8ed508378ab8b8a67614f1fbff743e50469ebcfd41e325f0e225766"
+  url "https://github.com/neteinstein/Calendar-Sync/archive/e4d360612d81f9f2cb67f5f9f9e07619c05dfaaa.tar.gz"
+  version "2.0.3"
+  sha256 "e7c45547385512b4c8b2b1659730b9cff66660daf352dfa10c7c5269ec5d5cf0"
   license "SUL-1.0"
   head "https://github.com/neteinstein/Calendar-Sync.git", branch: "main"
 
@@ -59,8 +59,9 @@ class CalendarSync < Formula
       If you opened it yourself, quit it and open the new version with:
         pkill -x CalendarSync; sleep 1; open "#{opt_prefix}/Calendar Sync.app"
 
-      The build is ad-hoc signed, so macOS asks for calendar access again
-      after each upgrade. Your settings are kept.
+      The build is ad-hoc signed, so macOS asks for calendar access (and
+      Reminders access, once you open Tasks) again after each upgrade. Your
+      settings and tasks are kept.
     EOS
   end
 
