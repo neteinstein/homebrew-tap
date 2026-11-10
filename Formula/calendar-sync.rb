@@ -7,9 +7,9 @@
 class CalendarSync < Formula
   desc "Menu bar app that copies secondary-calendar meetings into your main calendar"
   homepage "https://github.com/neteinstein/Calendar-Sync"
-  url "https://github.com/neteinstein/Calendar-Sync/archive/7de2452644d7f3eab358d121c41de7657ed00795.tar.gz"
-  version "2.0.14"
-  sha256 "e58cdbcd24ae80db47efdc1bd68e4a2851473483cb22c1cd557df81c4899c11e"
+  url "https://github.com/neteinstein/Calendar-Sync/archive/6e833b89e6812b8fb6c8ec15c65756480e6e32ad.tar.gz"
+  version "2.0.15"
+  sha256 "94c239f202dfe2926215e14ec23fb941b97073ffb43349e24caf458fa18a7aac"
   license "SUL-1.0"
   head "https://github.com/neteinstein/Calendar-Sync.git", branch: "main"
 
@@ -53,11 +53,11 @@ class CalendarSync < Formula
         brew trust --formula neteinstein/tap/calendar-sync
 
       brew upgrade doesn't restart a running Calendar Sync: it keeps
-      running the old version until it quits. If you started it with
-      brew services, restart it with:
+      running the old version until the new one starts, which has the old
+      copy quit and takes its place. If you started it with brew services:
         brew services restart calendar-sync
-      If you opened it yourself, quit it and open the new version with:
-        pkill -x CalendarSync; sleep 1; open "#{opt_prefix}/Calendar Sync.app"
+      If you opened it yourself:
+        open "#{opt_prefix}/Calendar Sync.app"
 
       The build is ad-hoc signed, so macOS asks for calendar access (and
       Reminders access, once you open Tasks) again after each upgrade. Your
