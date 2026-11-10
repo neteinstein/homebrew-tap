@@ -2,7 +2,7 @@
 
 Homebrew formulas for [neteinstein](https://github.com/neteinstein)'s projects.
 
-## [Calendar Hub](https://github.com/neteinstein/Calendar-Sync)
+## [Calendar Hub](https://github.com/neteinstein/Calendar-Hub)
 
 A tiny macOS menu bar app that copies meetings from your client calendars into your main
 calendar. The formula builds it from source on your Mac (needs macOS 14+ and the Xcode 15+
