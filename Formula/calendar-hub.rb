@@ -8,9 +8,9 @@
 class CalendarHub < Formula
   desc "Menu bar app that copies secondary-calendar meetings into your main calendar"
   homepage "https://github.com/neteinstein/Calendar-Hub"
-  url "https://github.com/neteinstein/Calendar-Hub/archive/3c84d0b10a642249404773e95165d0a63b654dcb.tar.gz"
-  version "2.0.25"
-  sha256 "a5730e91a058be5953cdd69d92ef06cf94e7e88287600f16ca9351fc4908570b"
+  url "https://github.com/neteinstein/Calendar-Hub/archive/6b104dcbe12d28fa188b7855fd1d0b96c12229be.tar.gz"
+  version "2.0.26"
+  sha256 "681a5bbb719d98e82fc04e1f9005b6eb79f6d8f0fd7705b2354e27512cbdaf05"
   license "SUL-1.0"
   head "https://github.com/neteinstein/Calendar-Hub.git", branch: "main"
 
