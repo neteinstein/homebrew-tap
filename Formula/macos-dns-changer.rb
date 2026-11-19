@@ -1,9 +1,9 @@
 class MacosDnsChanger < Formula
   desc "Menu bar app that turns on encrypted DNS (DNS over TLS) with one click"
   homepage "https://github.com/neteinstein/MacOS-MenuBar-DNS-Changer"
-  url "https://github.com/neteinstein/MacOS-MenuBar-DNS-Changer/archive/ba248a3453868a7eca010b63a0c427e09df028cb.tar.gz"
-  version "0.2.0"
-  sha256 "0c91b153b8291f5d094b162e7920f8d34d324790734a5cc5524e3c7b9d154af6"
+  url "https://github.com/neteinstein/MacOS-MenuBar-DNS-Changer/archive/2d9a882f55353f69d38a1074385b506bdb1c373d.tar.gz"
+  version "0.3.0"
+  sha256 "5b479f11d89c3fb408ff26d197e818a1ef5efda1be4ef81e35d0a9551c08a2a3"
   head "https://github.com/neteinstein/MacOS-MenuBar-DNS-Changer.git", branch: "main"
 
   depends_on macos: :ventura
